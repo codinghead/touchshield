@@ -1,1 +1,130 @@
-My GitHub Page
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Intel HEX Class Module - A C++ Intel HEX Encoder/Decoder</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta http-equiv="content-type" content="text/html; charset=utf-8"></head>
+<body>
+<span style="font-weight: bold;">QTouchShield</span><big><span style="font-weight: bold;"> - A multi-channel capacitive touch sheild for Arduino</span></big><br>
+
+<img style="width: 200px; height: 200px;" alt="Intel-HEX-Class-Module-Logo" src="images/intelhexclass.png"><br>
+
+<hr style="width: 100%; height: 2px;"><big><span style="font-weight: bold;">Table Of Contents</span></big><br>
+
+<ul>
+
+  <li><a href="#Introduction_to_the_QTouchShield_Project">Introduction to the QTouchShield Project</a></li>
+  <li><a href="#Key_Software_Capabilities">Key Software Capabilities</a></li><li>Key Hardware Capabilities</li><li><a href="#Downloading_the_CBUFF_Module">Downloading the QTouchShield Library</a></li>
+  <li><a href="#Online_Documentation_for_the_Intel_Hex">Online Documentation</a><br>
+  </li>
+
+</ul>
+
+<hr style="width: 100%; height: 2px;"><big style="font-weight: bold;"><a name="Introduction_to_the_QTouchShield_Project"></a>Introduction to the QTouchShield Project</big><br>
+
+<p class="western">The Intel HEX Class Module is designed to allow the
+programmer to easily work with Intel HEX files. Using standard C++
+stream operators it is possible to decode a file into memory and then
+to examine the entire content of the file much more easily than if the
+original file was simply opened in a text editor.</p>
+
+<p class="western">Additionally, again using a C++ stream operator, it
+is possible to encode the current data in memory back into Intel HEX
+format again straight to a file.</p>
+
+<p class="western">Using this class it is also possible to:<br>
+</p>
+
+<ul>
+
+  <li>Generate Intel HEX files with your own content</li>
+  <li>Fill blank areas of an Intel HEX file with a desired value or
+pattern</li>
+  <li>Merge two or more files together</li>
+  <li>Selectively merge parts of two or more files together</li>
+  <li>Check an Intel HEX file for correctness and integrity (correct
+construction, checksums ok, etc.)<br>
+  </li>
+</ul>
+
+<h1 class="western" style="page-break-before: always;"><small><small><a name="Key_Software_Capabilities"></a>Key Software
+Capabilities</small></small></h1>
+
+<ul>
+
+  <li>
+    <p class="western">Stream Intel HEX file content into class for
+decoding</p>
+  </li>
+  <li>Stream data stored in memory out from class in Intel HEX format
+to a file<br>
+  </li>
+  <li>
+    <p class="western">'Never give up' approach to decoding; warning
+and error messages can be examined upon completion; as much as humanely
+possible will have been decoded.</p>
+  </li>
+  <li>Class contains no 'try' calls; will always return cleanly for
+programmer to make decision how to proceed.<br>
+  </li>
+  <li>
+    <p class="western">File sizes up to 4GB supported (system
+dependent).</p>
+  </li>
+  <li>All records as per the official Intel "Hexadecimal Object File
+Format Specification, Revision A, January 6, 1988" supported<br>
+  </li>
+</ul><a name="Prewritten_Utilities"></a>
+
+<big><span style="font-weight: bold;"></span></big><big><span style="font-weight: bold;">Prewritten Utilities</span></big>
+<p>The project contains some simple, prewritten utilities that use the
+Intel HEX Class module. These fulfill two purposes; functional examples
+of how to use the class and useful tools for analysing and manipulating
+Intel HEX file format data. A brief overview of the utilities is
+provided below:</p>
+<ul>
+  <li>ihIntegrity - Analyses the desired Intel HEX file and reports
+back an errors, such as repeated end-of-file records, missing start of
+record symbols, checksum errors and erroneous record markers.<br>
+  </li>
+  <li>ihRefactor
+- Loads the desired Intel HEX file and generates it anew from lowest to
+highest address, all capitilised ASCII output and minimum number of
+Linear or Segment Address records. Helpful when trying to analyse such
+files in a text editor.<br>
+  </li>
+  <li>ihDiff - Compares the content of two Intel HEX files and lists
+the hexadecimal addresses where one of the files contains data that the
+other doesn't, or addresses where the content at that address differs.<br>
+  </li>
+</ul>
+A fully tested stable binaries will be available
+under the downloads link on&nbsp;<span style="text-decoration: underline;"></span>
+
+<a href="https://github.com/codinghead/touchshield/downloads">https://github.com/codinghead/Intel-HEX-Class/downloads</a>.
+<br>
+<br>
+<big><span style="font-weight: bold;"><a name="Downloading_the_CBUFF_Module"></a></span></big><big><span style="font-weight: bold;">Downloading the Intel Hex
+Class Module</span></big>
+<p>A fully tested stable release will be available
+under the downloads link on&nbsp;<span style="text-decoration: underline;"></span><a href="https://github.com/codinghead/touchshield/downloads">https://github.com/codinghead/Intel-HEX-Class/downloads</a>.
+Alternatively, the entire project in its current status can be pulled
+via git here: git://github.com/codinghead/Intel-HEX-Class.git</p>
+
+<p class="western"><big><span style="font-weight: bold;"><a name="Online_Documentation_for_the_Intel_Hex"></a>Online
+Documentation for the Intel Hex Class Module</span></big>
+</p>
+
+<p class="western">Documentation of the API for the Intel HEX Class
+module can be
+reviewed here: <span style="text-decoration: underline;"></span><a href="http://codinghead.github.com/touchshield/documentation/index.html">http://codinghead.github.com/Intel-HEX-Class/documentation</a>,
+can be downloaded in PDF format here: <a href="http://codinghead.github.com/touchshield/documentation/qtouchshield.pdf">http://codinghead.github.com/touchshield/documentation/qtouchshield.pdf</a>, or can be built from the git repository.<br>
+</p>
+
+<hr style="width: 100%; height: 2px;">
+<p class="western">Return to the <a href="https://github.com/codinghead/touchshield">QTouchShield's&nbsp;project home page</a>.</p>
+
+Updated 2nd July 2012
+<hr style="width: 100%; height: 2px;">
+</body></html>
