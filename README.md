@@ -18,9 +18,9 @@ Additionally the project includes the necessary firmware required by the shield'
 Key Capabilties
 ---------------
 * Support up to 32 capacitive touch inputs supporting:
-** up to 8 sliders/wheels
-** up to 32 buttons
-** up to 32 proximity sensors
+	* up to 8 sliders/wheels
+	* up to 32 buttons
+	* up to 32 proximity sensors
 * Configuration via SPI or UART (RX/TX) interfaces
 * Arduino library to simplify integration into sketches
 
