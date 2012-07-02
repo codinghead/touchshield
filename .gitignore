@@ -10,3 +10,10 @@
 *.lai
 *.la
 *.a
+
+# Eagle CAD ignore files.
+hardware\QTouchShield\*.png
+hardware\QTouchShield\*.b#*
+hardware\QTouchShield\*.s#*
+hardware\QTouchShield\*.zip
+hardware\QTouchShield\netlist
