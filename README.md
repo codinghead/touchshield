@@ -27,7 +27,7 @@ Key Capabilties
 Licensing
 ---------
 
-The hardware is licensed under the Creative Commons Share-Alike license:
+The hardware is licensed under the Creative Commons ShareAlike license:
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
 To view a copy of this license, visit [http://creativecommons.org/licenses/by-sa/3.0/] (http://creativecommons.org/licenses/by-sa/3.0/) or send
