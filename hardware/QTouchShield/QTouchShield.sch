@@ -5174,9 +5174,13 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <wire x1="20.32" y1="-55.88" x2="20.32" y2="-27.94" width="0.1524" layer="97" style="longdash"/>
 <wire x1="-96.52" y1="-66.04" x2="-2.54" y2="-66.04" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="-2.54" y1="-66.04" x2="-2.54" y2="-106.68" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="-2.54" y1="-109.22" x2="-2.54" y2="-261.62" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="-2.54" y1="-109.22" x2="-2.54" y2="-220.98" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="-2.54" y1="-220.98" x2="-2.54" y2="-228.6" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="-2.54" y1="-228.6" x2="-2.54" y2="-261.62" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="-2.54" y1="-261.62" x2="-96.52" y2="-261.62" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="-96.52" y1="-261.62" x2="-96.52" y2="-109.22" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="-96.52" y1="-261.62" x2="-96.52" y2="-228.6" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="-96.52" y1="-228.6" x2="-96.52" y2="-220.98" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="-96.52" y1="-220.98" x2="-96.52" y2="-109.22" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="-96.52" y1="-106.68" x2="-96.52" y2="-66.04" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="-96.52" y1="-106.68" x2="-2.54" y2="-106.68" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="-2.54" y1="-106.68" x2="-2.54" y2="-109.22" width="0.1524" layer="97" style="shortdash"/>
@@ -6781,6 +6785,15 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <rectangle x1="305.35" y1="-245.25" x2="365.35" y2="-245.15" layer="200"/>
 <rectangle x1="305.35" y1="-245.15" x2="365.35" y2="-245.05" layer="200"/>
 <rectangle x1="305.35" y1="-245.05" x2="365.35" y2="-244.95" layer="200"/>
+<text x="-88.9" y="-259.08" size="1.778" layer="97">Mountain View, California, 94041, USA.</text>
+<text x="-88.9" y="-254" size="1.778" layer="97">Creative Commons, 444 Castro Street, Suite 900,</text>
+<text x="-88.9" y="-248.92" size="1.778" layer="97">http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to:</text>
+<text x="-88.9" y="-243.84" size="1.778" layer="97">To view a copy of this license, visit</text>
+<text x="-88.9" y="-238.76" size="1.778" layer="97">Attribution-ShareAlike 3.0 Unported License.</text>
+<text x="-88.9" y="-233.68" size="1.778" layer="97">This work is licensed under the Creative Commons</text>
+<text x="-88.9" y="-226.06" size="2.54" layer="97">License</text>
+<wire x1="-2.54" y1="-228.6" x2="-96.52" y2="-228.6" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="-2.54" y1="-220.98" x2="-96.52" y2="-220.98" width="0.1524" layer="97" style="shortdash"/>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="58.42" y="60.96"/>
