@@ -17,3 +17,10 @@ hardware/QTouchShield/*.b#*
 hardware/QTouchShield/*.s#*
 hardware/QTouchShield/*.zip
 hardware/QTouchShield/netlist
+
+# Google SketchUp/EagleUp ignored files.
+hardware/QTouchShield/eagleUp/*.skb
+hardware/QTouchShield/eagleUp/*.log
+hardware/QTouchShield/eagleUp/*.jpg
+hardware/QTouchShield/eagleUp/*.png
+
