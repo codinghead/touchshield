@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -51,7 +51,7 @@
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
@@ -5188,10 +5188,10 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <wire x1="-2.54" y1="-106.68" x2="-2.54" y2="-109.22" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="-2.54" y1="-109.22" x2="-96.52" y2="-109.22" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="-96.52" y1="-109.22" x2="-96.52" y2="-106.68" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="256.54" y1="-45.72" x2="256.54" y2="25.4" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="256.54" y1="25.4" x2="284.48" y2="25.4" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="254" y1="-45.72" x2="254" y2="25.4" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="254" y1="25.4" x2="284.48" y2="25.4" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="284.48" y1="25.4" x2="284.48" y2="-45.72" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="284.48" y1="-45.72" x2="256.54" y2="-45.72" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="284.48" y1="-45.72" x2="254" y2="-45.72" width="0.1524" layer="97" style="shortdash"/>
 <text x="170.18" y="25.4" size="1.778" layer="97" rot="R90">Use to link AT32UC3C</text>
 <text x="172.72" y="25.4" size="1.778" layer="97" rot="R90">RESET_N to</text>
 <text x="175.26" y="25.4" size="1.778" layer="97" rot="R90">Arduino RESET</text>
@@ -8826,8 +8826,8 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 </instance>
 <instance part="JP10" gate="G$1" x="264.16" y="-12.7" rot="R180"/>
 <instance part="JP11" gate="G$1" x="264.16" y="-2.54" rot="R180"/>
-<instance part="JP12" gate="G$1" x="264.16" y="7.62" rot="R180"/>
-<instance part="JP13" gate="G$1" x="264.16" y="17.78" rot="R180"/>
+<instance part="JP12" gate="G$1" x="264.16" y="17.78" rot="R180"/>
+<instance part="JP13" gate="G$1" x="264.16" y="7.62" rot="R180"/>
 <instance part="JP14" gate="G$1" x="228.6" y="73.66" rot="R180"/>
 <instance part="JP15" gate="G$1" x="185.42" y="-7.62" rot="R180"/>
 <instance part="JP16" gate="G$1" x="185.42" y="-17.78" rot="R180"/>
@@ -11169,24 +11169,24 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <wire x1="157.48" y1="-40.64" x2="134.62" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="294.64" y1="-25.4" x2="292.1" y2="-22.86" width="0.1524" layer="91"/>
-<wire x1="292.1" y1="-22.86" x2="281.94" y2="-22.86" width="0.1524" layer="91"/>
-<pinref part="SJ4" gate="1" pin="2"/>
+<wire x1="294.64" y1="-30.48" x2="292.1" y2="-27.94" width="0.1524" layer="91"/>
+<pinref part="SJ3" gate="1" pin="2"/>
+<wire x1="279.4" y1="-27.94" x2="271.78" y2="-27.94" width="0.1524" layer="91"/>
+<pinref part="SJ3" gate="1" pin="1"/>
+<wire x1="261.62" y1="-27.94" x2="261.62" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="-25.4" x2="271.78" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="-25.4" x2="271.78" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="271.78" y="-27.94"/>
+<wire x1="292.1" y1="-27.94" x2="279.4" y2="-27.94" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="51"/>
+<wire x1="251.46" y1="-27.94" x2="251.46" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="-33.02" x2="246.38" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="-27.94" x2="251.46" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="261.62" y="-27.94"/>
 <pinref part="JP13" gate="G$1" pin="1"/>
-<wire x1="281.94" y1="-22.86" x2="266.7" y2="-22.86" width="0.1524" layer="91"/>
-<wire x1="281.94" y1="-22.86" x2="281.94" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="281.94" y1="17.78" x2="266.7" y2="17.78" width="0.1524" layer="91"/>
-<junction x="281.94" y="-22.86"/>
-<wire x1="256.54" y1="-22.86" x2="248.92" y2="-22.86" width="0.1524" layer="91"/>
-<wire x1="248.92" y1="-22.86" x2="248.92" y2="-30.48" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="50"/>
-<wire x1="248.92" y1="-30.48" x2="246.38" y2="-30.48" width="0.1524" layer="91"/>
-<pinref part="SJ4" gate="1" pin="1"/>
-<wire x1="256.54" y1="-22.86" x2="256.54" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="256.54" y="-22.86"/>
-<wire x1="256.54" y1="-20.32" x2="266.7" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="266.7" y1="-20.32" x2="266.7" y2="-22.86" width="0.1524" layer="91"/>
-<junction x="266.7" y="-22.86"/>
+<wire x1="266.7" y1="7.62" x2="279.4" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="279.4" y1="7.62" x2="279.4" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="279.4" y="-27.94"/>
 </segment>
 </net>
 <net name="SDT-SPI0-MISO" class="0">
@@ -11196,24 +11196,24 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <wire x1="157.48" y1="-43.18" x2="134.62" y2="-43.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="294.64" y1="-30.48" x2="292.1" y2="-27.94" width="0.1524" layer="91"/>
-<wire x1="292.1" y1="-27.94" x2="279.4" y2="-27.94" width="0.1524" layer="91"/>
-<pinref part="SJ3" gate="1" pin="2"/>
-<wire x1="279.4" y1="-27.94" x2="271.78" y2="-27.94" width="0.1524" layer="91"/>
-<wire x1="279.4" y1="-27.94" x2="279.4" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="279.4" y1="7.62" x2="266.7" y2="7.62" width="0.1524" layer="91"/>
-<junction x="279.4" y="-27.94"/>
+<wire x1="294.64" y1="-25.4" x2="292.1" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="SJ4" gate="1" pin="2"/>
+<wire x1="281.94" y1="-22.86" x2="266.7" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="SJ4" gate="1" pin="1"/>
+<wire x1="256.54" y1="-22.86" x2="256.54" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="-20.32" x2="266.7" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="-20.32" x2="266.7" y2="-22.86" width="0.1524" layer="91"/>
+<junction x="266.7" y="-22.86"/>
+<wire x1="292.1" y1="-22.86" x2="281.94" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="50"/>
+<wire x1="248.92" y1="-22.86" x2="248.92" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="248.92" y1="-30.48" x2="246.38" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="-22.86" x2="248.92" y2="-22.86" width="0.1524" layer="91"/>
+<junction x="256.54" y="-22.86"/>
 <pinref part="JP12" gate="G$1" pin="1"/>
-<wire x1="261.62" y1="-27.94" x2="251.46" y2="-27.94" width="0.1524" layer="91"/>
-<wire x1="251.46" y1="-27.94" x2="251.46" y2="-33.02" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="51"/>
-<wire x1="251.46" y1="-33.02" x2="246.38" y2="-33.02" width="0.1524" layer="91"/>
-<pinref part="SJ3" gate="1" pin="1"/>
-<wire x1="261.62" y1="-27.94" x2="261.62" y2="-25.4" width="0.1524" layer="91"/>
-<junction x="261.62" y="-27.94"/>
-<wire x1="261.62" y1="-25.4" x2="271.78" y2="-25.4" width="0.1524" layer="91"/>
-<wire x1="271.78" y1="-25.4" x2="271.78" y2="-27.94" width="0.1524" layer="91"/>
-<junction x="271.78" y="-27.94"/>
+<wire x1="266.7" y1="17.78" x2="281.94" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="281.94" y1="17.78" x2="281.94" y2="-22.86" width="0.1524" layer="91"/>
+<junction x="281.94" y="-22.86"/>
 </segment>
 </net>
 <net name="SDT-SPI0-SCK" class="0">
