@@ -1,15 +1,11 @@
-# Compiled Object files
-*.slo
-*.lo
+# Atmel Studio 6 and Compiler ignored files
+*.eep
+*.elf
+*.hex
+*.lss
+*.map
+*.d
 *.o
-
-# Compiled Dynamic libraries
-*.so
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
 
 # Eagle CAD ignore files.
 hardware/QTouchShield/*.png
