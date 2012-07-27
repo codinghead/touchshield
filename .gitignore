@@ -24,3 +24,5 @@ hardware/QTouchShield/eagleUp/*.log
 hardware/QTouchShield/eagleUp/*.jpg
 hardware/QTouchShield/eagleUp/*.png
 
+# Microsoft Excel temporary files
+~*.xlsx
