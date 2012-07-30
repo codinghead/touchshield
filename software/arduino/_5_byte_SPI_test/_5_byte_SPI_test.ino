@@ -43,8 +43,8 @@
 // UC3C code operates as a simple loop-back function
 // Written for Arduino MEGA
 // Arduino output sent and received data via Serial.print()
-// LED (pin 13) blinks if received data is correct. Stays on
-// permanently if it is wrong.
+// LED (pin 13) blinks if received data is incorrect. Stays off
+// permanently if it is correct.
 
 // include the SPI library:
 #include <SPI.h>
@@ -53,49 +53,60 @@
 int led = 13;
 
 // Variable for data to send to UC3C
-byte dataByte = 0x00;
+byte dataSent = 0x00;
 byte dataRead = 0x00;
 
 // Use Pin 53 as SPI Slave Select
 int slaveSelect = 53;
 
 void setup() {
+  /* Use Pin 13 as an output (LED) */
   pinMode(led, OUTPUT);
+  /* Use Pin53 as SS slave select */
   pinMode(slaveSelect, OUTPUT);
+  /* Enable serial output for debugging */
   Serial.begin(115200);
+  /* Enable the SPI library */
   SPI.begin();
+  /* Set SPI for MSB first, SPI Mode 0 and clock div 2 */
   SPI.setBitOrder(MSBFIRST);
   SPI.setDataMode(SPI_MODE0);
-  SPI.setClockDivider(SPI_CLOCK_DIV128);
-  //digitalWrite(slaveSelect,LOW);
-  //SPI.transfer(dataByte);
-  //delay(1);
-  //digitalWrite(slaveSelect,HIGH);
-  //++dataByte;
-  //delay(25);
+  SPI.setClockDivider(SPI_CLOCK_DIV2);
 }
 
 void loop() {
+  // Set slave select signal low
   digitalWrite(slaveSelect,LOW);
-  //delay(1);
-  while(dataByte < 5)
+
+  // Send five bytes of data in one transfer
+  while(dataSent < 5)
   {
-    digitalWrite(led, HIGH);
-    dataRead = SPI.transfer(dataByte);
-    Serial.print(dataByte, HEX);
-    Serial.print(" ");
-    Serial.print(dataRead, HEX);
-    Serial.println(" ");
-    if (dataRead == (dataByte - 1))
+    dataRead = SPI.transfer(dataSent);
+    
+    // If data read was same as previous sent byte, turn LED off
+    dataRead += 1;
+    if (dataRead == 5)
+    {
+      dataRead = 0; 
+    }
+    if (dataSent == dataRead)
     {
       digitalWrite(led, LOW);
     }
-    ++dataByte;
-    delay(2); // Need this delay >= 2
+    // Otherwise turn LED on to signal error output to Serial interface
+    else
+    {
+      digitalWrite(led, HIGH);
+      Serial.print(dataSent, HEX);
+      Serial.print(" ");
+      Serial.print(dataRead, HEX);
+      Serial.println(" ");
+    }
+    // Increment value to be sent
+    ++dataSent;
   }
-  delay(5);
-  Serial.println("Trans. Compl.");
+  // End this transfer by setting SS high again
   digitalWrite(slaveSelect,HIGH);
-  dataByte = 0;
-  delay(5);
+  // Reset data to be sent back to 0
+  dataSent = 0;
 }
