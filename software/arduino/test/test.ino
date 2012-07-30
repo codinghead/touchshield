@@ -35,7 +35,7 @@
 *
 * \author Stuart Cording aka CODINGHEAD
 *
-********************************************************************************
+********************************************************************************/
 
 // Sends 8-bit data via SPI to UC3C, incrementing by one after
 // each transfer. Expects to receive sent data - 2 back from 
@@ -49,6 +49,9 @@
 // TODO: Need to find out why UC3C doesn't like the SS pin
 //       changing between bytes. Need to check UC3C bus timing
 //       and set up clock and peripheral bus properly.
+//       UPDATE: Added short delay before raising the SS pin again
+//       seems time between end of transfer and SS rising edge
+//       was too short.
 
 
 
@@ -75,25 +78,27 @@ void setup() {
   SPI.setClockDivider(SPI_CLOCK_DIV128);
   digitalWrite(slaveSelect,LOW);
   SPI.transfer(dataByte);
-  //digitalWrite(slaveSelect,HIGH);
+  delay(1);
+  digitalWrite(slaveSelect,HIGH);
   ++dataByte;
   delay(25);
 }
 
 void loop() {
   digitalWrite(led, HIGH);
-  //digitalWrite(slaveSelect,LOW);
+  digitalWrite(slaveSelect,LOW);
   dataRead = SPI.transfer(dataByte);
-  ++dataByte;
-  //digitalWrite(slaveSelect,HIGH);
-  delay(250);
-  if (dataRead == (dataByte - 2))
-  {
-    digitalWrite(led, LOW);
-  }
+  delay(1);
+  digitalWrite(slaveSelect,HIGH);
   Serial.print(dataByte, HEX);
   Serial.print(" ");
   Serial.print(dataRead, HEX);
   Serial.println(" ");
+  delay(250);
+  if (dataRead == (dataByte - 1))
+  {
+    digitalWrite(led, LOW);
+  }
+  ++dataByte;
   delay(250);
 }
