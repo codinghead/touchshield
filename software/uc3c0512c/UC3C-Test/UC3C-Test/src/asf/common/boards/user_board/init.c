@@ -9,8 +9,12 @@
 #include <conf_board.h>
 #include <gpio.h>
 #include <spi.h>
+#include <flashc.h>
+#include <pm_uc3c.h>
+#include <scif_uc3c.h>
 
 void initSpi0(void);
+void initClocks(void);
 
 void board_init(void)
 {
@@ -27,42 +31,33 @@ void board_init(void)
     gpio_configure_pin(AVR32_PIN_PA07,GPIO_DIR_OUTPUT | GPIO_INIT_HIGH);
     //gpio_toggle_pin(AVR32_PIN_PA07);
 
-#if 0    
-    gpio_configure_pin(AVR32_PIN_PD03, GPIO_DIR_OUTPUT | GPIO_INIT_HIGH);
-    while(1)
-    {
-        gpio_clr_gpio_pin(AVR32_PIN_PD03);
-        gpio_set_gpio_pin(AVR32_PIN_PD03);
-        gpio_clr_gpio_pin(AVR32_PIN_PD03);
-        gpio_set_gpio_pin(AVR32_PIN_PD03);
-    }
-    
-    /* Test for SPI interface */
-    gpio_configure_pin(AVR32_PIN_PD03, GPIO_DIR_OUTPUT | GPIO_INIT_HIGH);
-    while(1)
-    {
-        gpio_set_pin_high(AVR32_PIN_PD03);
-        gpio_set_pin_low(AVR32_PIN_PD03);
-        gpio_set_pin_high(AVR32_PIN_PD03);
-        gpio_set_pin_low(AVR32_PIN_PD03);
-    }
-    /* Test for SPI interface */
-    gpio_configure_pin(AVR32_PIN_PD03, GPIO_DIR_INPUT | GPIO_PULL_UP);
-    while(1)
-    {
-        if (gpio_get_pin_value(AVR32_PIN_PD03) == 1)
-        {
-            gpio_set_pin_high(AVR32_PIN_PA07);
-        }
-        else if (gpio_get_pin_value(AVR32_PIN_PD03) == 0)
-        {
-            gpio_set_pin_low(AVR32_PIN_PA07);
-        }
-    }
-#endif
+    /* Initialise the clock and flash wait states */
+    initClocks();
+
     /* Initialise the SPI0 on PD03/04/05/06 in Slave Mode */
     initSpi0();
     
+}
+
+void initClocks(void)
+{
+    /* Start the 120MHz internal RCosc (RC120M) */
+    scif_start_rc120M();
+    
+    /* We will use a 60MHz clock - need 1 wait state for flash memory */
+    flashc_set_wait_state(1);
+    
+    /* Set CPU clock domain to 120MHz / 2 */
+    pm_set_clk_domain_div((pm_clk_domain_t)AVR32_PM_CLK_GRP_CPU, PM_CKSEL_DIVRATIO_2);
+    
+    /* Set Peripheral Bus A to 120MHz / 2 */
+    pm_set_clk_domain_div((pm_clk_domain_t)AVR32_PM_CLK_GRP_PBA, PM_CKSEL_DIVRATIO_2);
+    
+    /* Set Peripheral Bus B to 120MHz / 2 */
+    pm_set_clk_domain_div((pm_clk_domain_t)AVR32_PM_CLK_GRP_PBB, PM_CKSEL_DIVRATIO_2);
+    
+    /* Switch to the RC120M oscillator as clock source */
+    pm_set_mclk_source(PM_CLK_SRC_RC120M);
 }
 
 void initSpi0(void)
