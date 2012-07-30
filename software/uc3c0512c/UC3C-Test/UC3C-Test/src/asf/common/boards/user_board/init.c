@@ -47,14 +47,17 @@ void initClocks(void)
     /* We will use a 60MHz clock - need 1 wait state for flash memory */
     flashc_set_wait_state(1);
     
-    /* Set CPU clock domain to 120MHz / 2 */
+    /* Set CPU clock domain to 120MHz / 2 = 60MHz */
     pm_set_clk_domain_div((pm_clk_domain_t)AVR32_PM_CLK_GRP_CPU, PM_CKSEL_DIVRATIO_2);
     
-    /* Set Peripheral Bus A to 120MHz / 2 */
+    /* Set Peripheral Bus A to same frequency */
     pm_set_clk_domain_div((pm_clk_domain_t)AVR32_PM_CLK_GRP_PBA, PM_CKSEL_DIVRATIO_2);
     
-    /* Set Peripheral Bus B to 120MHz / 2 */
+    /* Set Peripheral Bus B to same frequency (needed for FLASHC configuration) */
     pm_set_clk_domain_div((pm_clk_domain_t)AVR32_PM_CLK_GRP_PBB, PM_CKSEL_DIVRATIO_2);
+    
+    /* Set Peripheral Bus C to same frequency (needed for SPI0 configuration) */
+    pm_set_clk_domain_div((pm_clk_domain_t)AVR32_PM_CLK_GRP_PBC, PM_CKSEL_DIVRATIO_2);
     
     /* Switch to the RC120M oscillator as clock source */
     pm_set_mclk_source(PM_CLK_SRC_RC120M);
