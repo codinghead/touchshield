@@ -5126,7 +5126,7 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <text x="-55.88" y="-12.7" size="1.778" layer="97">Keep close to pin 53</text>
 <text x="-66.04" y="88.9" size="1.778" layer="97">Keep close to pins 34 &amp; 35</text>
 <text x="175.26" y="-248.92" size="5.08" layer="97">Sensor Headers</text>
-<text x="246.38" y="-144.78" size="5.08" layer="97">Detection Logic Outputs</text>
+<text x="243.84" y="-137.16" size="5.08" layer="97">Detection Logic Outputs</text>
 <text x="299.72" y="-27.94" size="3.81" layer="97">Cut wires to use</text>
 <text x="299.72" y="-35.56" size="3.81" layer="97">alternative SPI</text>
 <text x="299.72" y="-43.18" size="3.81" layer="97">interface</text>
@@ -8694,6 +8694,7 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <rectangle x1="-78.15" y1="-158.15" x2="-75.55" y2="-158.05" layer="200"/>
 <rectangle x1="-77.75" y1="-158.05" x2="-75.95" y2="-157.95" layer="200"/>
 <wire x1="-2.54" y1="-151.48" x2="-96.52" y2="-151.48" width="0.1524" layer="97" style="shortdash"/>
+<text x="243.84" y="-147.32" size="3.81" layer="97">One pin per "channel"</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="58.42" y="60.96"/>
