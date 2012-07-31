@@ -9,6 +9,10 @@
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
@@ -5100,6 +5104,9 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <part name="S1" library="SparkFun" deviceset="TAC_SWITCH" device="SMD" value="RESET"/>
 <part name="R35" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="10K"/>
 <part name="SJ5" library="jumper" deviceset="SJ" device="" value="RESET-LINK"/>
+<part name="JP18" library="pinhead" deviceset="PINHD-2X5" device="" value="TOUCH DATA"/>
+<part name="GND9" library="SparkFun" deviceset="GND" device=""/>
+<part name="P+6" library="SparkFun" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8839,6 +8846,9 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <attribute name="NAME" x="200.66" y="27.94" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="194.31" y="40.64" size="1.778" layer="96" rot="R270"/>
 </instance>
+<instance part="JP18" gate="A" x="116.84" y="-139.7" rot="R90"/>
+<instance part="GND9" gate="1" x="127" y="-152.4"/>
+<instance part="P+6" gate="1" x="127" y="-127"/>
 </instances>
 <busses>
 <bus name="SNS[0..31]">
@@ -8932,6 +8942,16 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <wire x1="165.1" y1="-121.92" x2="289.56" y2="-121.92" width="0.762" layer="92"/>
 <wire x1="289.56" y1="-121.92" x2="294.64" y2="-116.84" width="0.762" layer="92"/>
 <wire x1="294.64" y1="-116.84" x2="294.64" y2="63.5" width="0.762" layer="92"/>
+</segment>
+</bus>
+<bus name="TOUCH_DATA-SS,TOUCH_DATA-SCK,TOUCH_DATA-MOSI,TOUCH_DATA-MISO">
+<segment>
+<wire x1="142.24" y1="-86.36" x2="142.24" y2="-121.92" width="0.762" layer="92"/>
+<wire x1="142.24" y1="-121.92" x2="139.7" y2="-119.38" width="0.762" layer="92"/>
+<wire x1="139.7" y1="-119.38" x2="119.38" y2="-119.38" width="0.762" layer="92"/>
+<wire x1="142.24" y1="-121.92" x2="142.24" y2="-154.94" width="0.762" layer="92"/>
+<wire x1="142.24" y1="-154.94" x2="139.7" y2="-157.48" width="0.762" layer="92"/>
+<wire x1="139.7" y1="-157.48" x2="119.38" y2="-157.48" width="0.762" layer="92"/>
 </segment>
 </bus>
 </busses>
@@ -10178,6 +10198,13 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <pinref part="C38" gate="G$1" pin="2"/>
 <wire x1="-22.86" y1="-40.64" x2="-22.86" y2="-38.1" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="GND9" gate="1" pin="GND"/>
+<wire x1="127" y1="-149.86" x2="127" y2="-147.32" width="0.1524" layer="91"/>
+<wire x1="127" y1="-147.32" x2="121.92" y2="-147.32" width="0.1524" layer="91"/>
+<pinref part="JP18" gate="A" pin="9"/>
+<wire x1="121.92" y1="-147.32" x2="121.92" y2="-142.24" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -10546,6 +10573,13 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <junction x="-12.7" y="20.32"/>
 <pinref part="P+5" gate="1" pin="VCC"/>
 <wire x1="-12.7" y1="20.32" x2="-12.7" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P+6" gate="1" pin="VCC"/>
+<wire x1="127" y1="-127" x2="127" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="127" y1="-129.54" x2="121.92" y2="-129.54" width="0.1524" layer="91"/>
+<pinref part="JP18" gate="A" pin="10"/>
+<wire x1="121.92" y1="-129.54" x2="121.92" y2="-134.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="JTAG_TMS" class="0">
@@ -11386,6 +11420,54 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <wire x1="200.66" y1="-20.32" x2="200.66" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="JP15" gate="G$1" pin="1"/>
 <wire x1="200.66" y1="-7.62" x2="187.96" y2="-7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TOUCH_DATA-SS" class="0">
+<segment>
+<wire x1="142.24" y1="-86.36" x2="139.7" y2="-83.82" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="PD21"/>
+<wire x1="139.7" y1="-83.82" x2="134.62" y2="-83.82" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="119.38" y1="-157.48" x2="116.84" y2="-154.94" width="0.1524" layer="91"/>
+<pinref part="JP18" gate="A" pin="5"/>
+<wire x1="116.84" y1="-154.94" x2="116.84" y2="-142.24" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TOUCH_DATA-SCK" class="0">
+<segment>
+<wire x1="142.24" y1="-88.9" x2="139.7" y2="-86.36" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="PD22"/>
+<wire x1="139.7" y1="-86.36" x2="134.62" y2="-86.36" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="121.92" y1="-119.38" x2="119.38" y2="-121.92" width="0.1524" layer="91"/>
+<pinref part="JP18" gate="A" pin="8"/>
+<wire x1="119.38" y1="-121.92" x2="119.38" y2="-134.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TOUCH_DATA-MOSI" class="0">
+<segment>
+<wire x1="142.24" y1="-91.44" x2="139.7" y2="-88.9" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="PD23"/>
+<wire x1="139.7" y1="-88.9" x2="134.62" y2="-88.9" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="119.38" y1="-119.38" x2="116.84" y2="-121.92" width="0.1524" layer="91"/>
+<pinref part="JP18" gate="A" pin="6"/>
+<wire x1="116.84" y1="-121.92" x2="116.84" y2="-134.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TOUCH_DATA-MISO" class="0">
+<segment>
+<wire x1="142.24" y1="-93.98" x2="139.7" y2="-91.44" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="PD24"/>
+<wire x1="139.7" y1="-91.44" x2="134.62" y2="-91.44" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="121.92" y1="-157.48" x2="119.38" y2="-154.94" width="0.1524" layer="91"/>
+<pinref part="JP18" gate="A" pin="7"/>
+<wire x1="119.38" y1="-154.94" x2="119.38" y2="-142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
