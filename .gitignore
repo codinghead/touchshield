@@ -8,17 +8,17 @@
 *.o
 
 # Eagle CAD ignore files.
-hardware/QTouchShield/*.png
-hardware/QTouchShield/*.b#*
-hardware/QTouchShield/*.s#*
-hardware/QTouchShield/*.zip
-hardware/QTouchShield/netlist
+hardware/*.png
+hardware/*.b#*
+hardware/*.s#*
+hardware/*.zip
+hardware/*netlist*
 
 # Google SketchUp/EagleUp ignored files.
-hardware/QTouchShield/eagleUp/*.skb
-hardware/QTouchShield/eagleUp/*.log
-hardware/QTouchShield/eagleUp/*.jpg
-hardware/QTouchShield/eagleUp/*.png
+hardware/*.skb
+hardware/*.log
+hardware/*.jpg
+hardware/*.png
 
 # Microsoft Excel temporary files
 ~*.xlsx
