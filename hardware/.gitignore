@@ -1,0 +1,11 @@
+# Eagle CAD ignore files.
+*.[png]*
+*.[b#]*
+*.[s#]*
+*.[zip]*
+*netlist*
+
+# Google SketchUp/EagleUp ignored files.
+*.[skb]*
+*.[log]*
+*.[jpg]*
