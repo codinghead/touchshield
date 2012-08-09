@@ -9569,15 +9569,6 @@ Based on  the following source:
 <wire x1="180.34" y1="22.86" x2="198.12" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="SJ5" gate="1" pin="2"/>
 <wire x1="198.12" y1="22.86" x2="198.12" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="33.02" x2="200.66" y2="33.02" width="0.1524" layer="91"/>
-<junction x="198.12" y="33.02"/>
-<wire x1="200.66" y1="33.02" x2="200.66" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="SJ5" gate="1" pin="1"/>
-<wire x1="198.12" y1="43.18" x2="198.12" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="U1" gate="A" pin="RESET"/>
-<wire x1="198.12" y1="48.26" x2="205.74" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="200.66" y1="43.18" x2="198.12" y2="43.18" width="0.1524" layer="91"/>
-<junction x="198.12" y="43.18"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -10771,6 +10762,14 @@ Based on  the following source:
 <pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="X1" gate="G$1" pin="3"/>
 <wire x1="-15.24" y1="71.12" x2="-15.24" y2="83.82" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="ARDUINO_RESET" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="RESET"/>
+<pinref part="SJ5" gate="1" pin="1"/>
+<wire x1="198.12" y1="43.18" x2="198.12" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="48.26" x2="205.74" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

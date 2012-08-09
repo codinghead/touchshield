@@ -3535,8 +3535,6 @@ Covered vias can be set in Masks (Limit).
 <contactref element="S1" pad="4"/>
 <contactref element="R35" pad="2"/>
 <contactref element="SJ5" pad="2"/>
-<contactref element="SJ5" pad="1"/>
-<contactref element="U1" pad="RESET"/>
 <contactref element="J18" pad="6"/>
 <wire x1="67.932" y1="77.48" x2="67.932" y2="75.568" width="0.5" layer="16"/>
 <wire x1="67.932" y1="75.568" x2="68" y2="75.5" width="0.5" layer="16"/>
@@ -3554,18 +3552,6 @@ Covered vias can be set in Masks (Limit).
 <wire x1="89.05" y1="75.025" x2="95.475" y2="75.025" width="0.5" layer="1"/>
 <wire x1="95.475" y1="75.025" x2="96" y2="74.5" width="0.5" layer="1"/>
 <wire x1="68.5" y1="75" x2="68" y2="75.5" width="0.5" layer="16"/>
-<wire x1="66.408" y1="77.48" x2="66.408" y2="79.092" width="0.5" layer="16"/>
-<wire x1="66.408" y1="79.092" x2="66" y2="79.5" width="0.5" layer="16"/>
-<wire x1="66" y1="79.5" x2="40.5" y2="79.5" width="0.5" layer="16"/>
-<wire x1="40.5" y1="79.5" x2="39" y2="78" width="0.5" layer="16"/>
-<via x="39" y="78" extent="1-16" drill="0.6"/>
-<wire x1="39" y1="78" x2="3.5" y2="78" width="0.5" layer="15"/>
-<wire x1="3.5" y1="78" x2="1.5" y2="76" width="0.5" layer="15"/>
-<wire x1="1.5" y1="76" x2="1.5" y2="5" width="0.5" layer="15"/>
-<wire x1="1.5" y1="5" x2="3" y2="3.5" width="0.5" layer="15"/>
-<wire x1="3" y1="3.5" x2="33" y2="3.5" width="0.5" layer="15"/>
-<via x="33" y="3.5" extent="1-16" drill="0.6"/>
-<wire x1="33" y1="3.5" x2="33" y2="6.64" width="0.5" layer="16"/>
 <wire x1="67.932" y1="77.48" x2="67.932" y2="75.432" width="0.5" layer="16"/>
 <wire x1="67.932" y1="75.432" x2="67.5" y2="75" width="0.5" layer="16"/>
 <wire x1="67.5" y1="75" x2="67" y2="74.5" width="0.5" layer="16"/>
@@ -3591,7 +3577,6 @@ Covered vias can be set in Masks (Limit).
 <wire x1="35.5" y1="18.5" x2="37.5" y2="18.5" width="0.5" layer="15"/>
 <wire x1="37.5" y1="18.5" x2="38" y2="18" width="0.5" layer="15"/>
 <wire x1="38" y1="18" x2="38" y2="14" width="0.5" layer="15"/>
-<wire x1="3" y1="3.5" x2="4" y2="4.5" width="0" layer="19" extent="15-15"/>
 </signal>
 <signal name="N$1">
 <contactref element="R33" pad="1"/>
@@ -5155,6 +5140,22 @@ Covered vias can be set in Masks (Limit).
 <wire x1="8.5" y1="68.4" x2="8.5" y2="69" width="0.254" layer="1"/>
 <wire x1="8.5" y1="69" x2="9.16" y2="69.66" width="0.254" layer="1"/>
 <wire x1="9.16" y1="69.66" x2="9.16" y2="70.95" width="0.254" layer="1"/>
+</signal>
+<signal name="ARDUINO_RESET">
+<contactref element="SJ5" pad="1"/>
+<contactref element="U1" pad="RESET"/>
+<wire x1="66.408" y1="77.48" x2="66.408" y2="79.092" width="0.5" layer="16"/>
+<wire x1="66.408" y1="79.092" x2="66" y2="79.5" width="0.5" layer="16"/>
+<wire x1="66" y1="79.5" x2="40.5" y2="79.5" width="0.5" layer="16"/>
+<wire x1="40.5" y1="79.5" x2="39" y2="78" width="0.5" layer="16"/>
+<via x="39" y="78" extent="1-16" drill="0.6"/>
+<wire x1="39" y1="78" x2="3.5" y2="78" width="0.5" layer="15"/>
+<wire x1="3.5" y1="78" x2="1.5" y2="76" width="0.5" layer="15"/>
+<wire x1="1.5" y1="76" x2="1.5" y2="5" width="0.5" layer="15"/>
+<wire x1="1.5" y1="5" x2="3" y2="3.5" width="0.5" layer="15"/>
+<wire x1="3" y1="3.5" x2="33" y2="3.5" width="0.5" layer="15"/>
+<via x="33" y="3.5" extent="1-16" drill="0.6"/>
+<wire x1="33" y1="3.5" x2="33" y2="6.64" width="0.5" layer="16"/>
 </signal>
 </signals>
 </board>
