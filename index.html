@@ -1,84 +1,160 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
-<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>QTouchShield - A multi-channel capacitive touch Arduino shield</title>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>QTouchShield - A multi-channel capacitive touch Arduino shield</title>
 
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta http-equiv="content-type" content="text/html; charset=utf-8"></head>
-<body>
+  
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+</head><body>
 <big><span style="font-weight: bold;">QTouchShield -
 A multi-channel
 capacitive touch sheild for Arduino</span></big><br>
+
 <img src="images/touchshieldlogo_small.png" alt="QTouchShield Logo" style="width: 200px; height: 200px;"><br>
+
 <hr style="width: 100%; height: 2px;"><big><span style="font-weight: bold;">Table Of Contents</span></big><br>
+
 <ul>
-<li><a href="#Introduction_to_the_QTouchShield_Project">Introduction
+
+  <li><a href="#Introduction_to_the_QTouchShield_Project">Introduction
 to the QTouchShield Project</a></li>
-<li><a href="#Key_Software_Capabilities">Key
+  <li><a href="#Key_Software_Capabilities">Key
 Software Capabilities</a></li>
-<li><a href="#Key_Hardware_Capabilities">Key
+  <li><a href="#Key_Hardware_Capabilities">Key
 Hardware Capabilities</a></li>
-<li><a href="#Downloading_the_QTouchShield_Files">Downloading
+  <li><a href="#Downloading_the_QTouchShield_Files">Downloading
 the QTouchShield Library</a></li>
-<li><a href="#Online_Documentation_for_the_QTouchShield">Online
+  <li><a href="#Online_Documentation_for_the_QTouchShield">Online
 Documentation</a><br>
-</li>
+  </li>
 </ul>
+
 <hr style="width: 100%; height: 2px;"><big style="font-weight: bold;"><a name="Introduction_to_the_QTouchShield_Project"></a>Introduction
 to the QTouchShield Project</big><br>
+
 <p class="western">The QTouchShield project is designed to
 allow the
 Arduino users to&nbsp;easily develop capacitive touch based
-applications. The project consists of three key elements:</p>
+applications. The shield is targeted at the Arduino MEGA platform, but also supports smaller boards such as the Arduino UNO.<br>
+</p>
+<p class="western">The project consists of three key elements:</p>
+
 <ul>
-<li>Hardware platform - QTouchShield</li>
-<li>Firmware platform - Code for the microcontroller ont he
+
+  <li>Hardware platform - QTouchShield</li>
+  <li>Firmware platform - Code for the microcontroller on the
 QTouchShield</li>
-<li>Arduino library - library to be called from Arduino
+  <li>Arduino library - library to be called from Arduino
 sketches, supporting the capabilties of the QTouchShield</li>
 </ul>
+
 <p class="western">The QTouchShield project supports:<br>
 </p>
+
 <ul>
-<li>Up to 32 configurable capacitive touch inputs based upon
+
+  <li>Up to 32 configurable capacitive touch inputs based upon
 the Atmel QTouch library</li>
-<li>Supports:</li>
-<ul>
-<li>Up to 32 capacitive touch buttons</li>
-<li>Up to 32 capacitive proximity sensors</li>
-<li>Up to 8 capacitive sliders (each using 3 capacitve inputs)</li>
-<li>Up to 8 capacitive wheels/rotors (each using 3 capactive
+  <li>Includes support for:</li>
+  <ul>
+    <li>Up to 32 capacitive touch buttons</li>
+    <li>Up to 32 capacitive proximity sensors</li>
+    <li>Up to 8 capacitive sliders (each using 3 capacitve inputs)</li>
+    <li>Up to 8 capacitive wheels/rotors (each using 3 capactive
 inputs)</li>
+  </ul>
 </ul>
-</ul>
+
 <big><span style="font-weight: bold;"><a name="Key_Software_Capabilities"></a>Key Software
 Capabilities
 </span></big>
 <ul>
-<li>
-<p class="western">TBD</p>
-</li>
+
+  <li>Fully configurable touch sensors (configurations
+as described above).
+  </li>
+  <li>Configurable sensitivity, touch detection hysteresis and key suppression, as supported by Atmel's QTouch library.</li>
+  <li>32 configurable input/output pins that can be controlled/read via the chosen serial interface or linked to a positive detection on an available touch sensor.</li>
+  <li>Firmware upgrade support via USB stick.</li>
+
 </ul>
+The software consists of firmware for the AVR32UC3C that forms the
+processing engine for the touch sensors and a matching Arduino Library
+to support the capabilites of the firmware. The software will be
+developed in the following phases:<br>
+<ol>
+  <li>Basic configuration of multiple capacitive touch keys.</li>
+  <li>Adds configuration of the 32 I/O pins and allows outputs to be linked to a detect on a touch channel.</li>
+  <li>Adds advanced configuration of the capacitve sensors, supporting additionally sliders and rotors (wheels).</li>
+  <li>Adds support for upgrading the firmware via the USB port from a USB mass storage device (USB stick).<br>
+  </li>
+</ol>
+
 <big><span style="font-weight: bold;"><a name="Key_Hardware_Capabilities"></a>Key Hardware
 Capabilities
 </span></big>
 <ul>
-<li>
-32 capacitive touch channels with
-local ground pin (for coaxial cabelling)</li><li>Hardware design licensed under Creative Commons ShareAlike 3.0</li>
 
-</ul>Preliminary images of the board design. First from Google SketchUp:<br><br><img style="width: 800px; height: 459px;" alt="QTouchShield image from Google SketchUp" src="images/QTouchShield.png"><br><br>And a rendered version thanks to "Maxwell":<br><br><img style="width: 800px; height: 459px;" alt="QTouchShield rendered in Maxwell" src="images/QTouchShieldRender3.png"><br>
+  <li>
+32 capacitive touch channels with
+local ground pin (for coaxial cabelling).</li>
+  <li>32 digital input/output pins.</li>
+  <li>Configuration via SPI interface (Arduino MEGA and UNO layouts
+supported) or via the serial interface (select from one of all four
+serialinterfaces on Arduino MEGA platform). </li>
+  <li>Shield firmware upgrade via USB stick.<br>
+  </li>
+
+  <li>Hardware design licensed under Creative Commons ShareAlike 3.0.</li>
+</ul>
+The shield will be available in two different flavours:<br>
+<ul>
+  <li>QTouchShield-LC - supports leaded components for the resistors
+and capacitors needed in each touch sensor channel. This allows easy
+tuning of the components during testing.</li>
+  <li>QTouchShield-SM - supports surface mount components for the
+resistors and capacitors needed in each touch sensor channel. The board
+is more compact and lighter in weight but requires a soldering iron
+should the sense channels need to be tuned in hardware.<br>
+  </li>
+</ul>
+
+Preliminary images of the board design. First from Google SketchUp:<br>
+
+<br>
+
+<img style="width: 800px; height: 459px;" alt="QTouchShield image from Google SketchUp" src="images/QTouchShield.png"><br>
+
+<br>
+
+And a rendered version thanks to "Maxwell":<br>
+
+<br>
+
+<img style="width: 800px; height: 459px;" alt="QTouchShield rendered in Maxwell" src="images/QTouchShieldRender3.png"><br>
+
 <big><span style="font-weight: bold;"><a name="Downloading_the_QTouchShield_Files"></a></span></big><big><span style="font-weight: bold;">Downloading the QTouchShield files</span></big>
 <p>A fully tested stable release will be available
 under the downloads link on&nbsp;<span style="text-decoration: underline;"></span><a href="https://github.com/codinghead/touchshield/downloads">https://github.com/codinghead/touchshield/downloads</a>.</p>
+
 <p class="western"><big><span style="font-weight: bold;"><a name="Online_Documentation_for_the_QTouchShield"></a>Online
 Documentation for the QTouchShield</span></big>
 </p>
+
 <p class="western">Documentation for the project will be
 made available at a later date once the system is more stable.<br>
 </p>
+
 <hr style="width: 100%; height: 2px;">
 <p class="western">Return to the <a href="https://github.com/codinghead/touchshield">QTouchShield's&nbsp;project
 home page</a>.</p>
-Updated 13th July 2012
+
+Updated 10th August 2012
 <hr style="width: 100%; height: 2px;">
 </body></html>
