@@ -10316,7 +10316,7 @@ Based on  the following source:
 <wire x1="246.38" y1="60.96" x2="269.24" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="SPI-SCK-ALT" class="0">
+<net name="SCK-UNO" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="13"/>
 <wire x1="246.38" y1="63.5" x2="248.92" y2="63.5" width="0.1524" layer="91"/>
@@ -10329,7 +10329,7 @@ Based on  the following source:
 <label x="250.19" y="-55.88" size="0.8128" layer="95"/>
 </segment>
 </net>
-<net name="SPI-MISO-ALT" class="0">
+<net name="MISO-UNO" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="12"/>
 <wire x1="205.74" y1="-25.4" x2="193.04" y2="-25.4" width="0.1524" layer="91"/>
@@ -10340,7 +10340,7 @@ Based on  the following source:
 <label x="250.19" y="-50.8" size="0.8128" layer="95"/>
 </segment>
 </net>
-<net name="SPI-MOSI-ALT" class="0">
+<net name="MOSI-UNO" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="11"/>
 <wire x1="205.74" y1="-22.86" x2="198.12" y2="-22.86" width="0.1524" layer="91"/>
@@ -10351,7 +10351,7 @@ Based on  the following source:
 <label x="250.19" y="-53.34" size="0.8128" layer="95"/>
 </segment>
 </net>
-<net name="SPI-SS-ALT" class="0">
+<net name="SS-UNO" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="10"/>
 <wire x1="205.74" y1="-20.32" x2="200.66" y2="-20.32" width="0.1524" layer="91"/>
