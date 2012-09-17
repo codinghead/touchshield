@@ -1,9 +1,9 @@
 # Atmel Studio 6 and Compiler ignored files
-*.[eep]*
-*.[elf]*
-*.[hex]*
-*.[lss]*
-*.[map]*
-*.[d]*
-*.[o]*
+*.eep
+*.elf
+*.hex
+*.lss
+*.map
+*.d
+*.o
 
